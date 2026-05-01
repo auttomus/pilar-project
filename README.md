@@ -38,7 +38,7 @@ Proyek ini dirancang agar dapat berjalan dengan satu perintah operasional melalu
 
    ```bash
    git clone <url-repositori>
-   cd website-pak-karma
+   cd pilar-project
    ```
 2. **Konfigurasi Variabel Lingkungan (*Environment Variables*)**
    Secara bawaan, sistem akan membaca file `.env.example` yang tersedia di masing-masing direktori. Untuk penyesuaian khusus, Anda dapat menyalin file tersebut:
