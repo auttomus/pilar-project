@@ -1,6 +1,6 @@
 # PILAR (Pilihan Arah & Rekomendasi)
 
-Selamat datang di repositori resmi **PILAR**, sebuah sistem penunjang keputusan (Decision Support System) yang dirancang untuk memetakan kecenderungan kognitif dan merekomendasikan lintasan akademik atau karir berdasarkan pemodelan matriks RIASEC (Holland Codes).
+Selamat datang di repositori resmi **PILAR**, sebuah sistem penunjang keputusan (Decision Support System) yang dirancang untuk memetakan kecenderungan kognitif dan merekomendasikan lintasan akademik berdasarkan pemodelan matriks RIASEC (Holland Codes).
 
 ## Arsitektur Sistem
 
