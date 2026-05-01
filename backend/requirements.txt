@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+sqlmodel
+pymysql
+cryptography
+alembic
+pydantic-settings
+email-validator

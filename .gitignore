@@ -1,0 +1,27 @@
+# Environment files (berisi kredensial sensitif)
+.env
+backend/.env
+frontend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+backend/.venv/
+
+# Node.js
+frontend/node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+
+# Alembic
+backend/alembic/__pycache__/

@@ -1,0 +1,58 @@
+services:
+  # --------------------------------------------------------
+  # 1. (Database MySQL)
+  # --------------------------------------------------------
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      # Mengambil password dari file .env di mesin lokal Anda
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: db_komputasi
+    ports:
+      - "3306:3306"
+    volumes:
+      - aset_data_mysql:/var/lib/mysql
+      # Seed data: MySQL otomatis menjalankan file .sql di folder ini saat inisialisasi pertama
+      - ./database/schemas:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # --------------------------------------------------------
+  # 2. (Backend Python/FastAPI)
+  # --------------------------------------------------------
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      # Menyuntikkan seluruh isi .env ke dalam container backend
+      - ./backend/.env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+
+  # --------------------------------------------------------
+  # 3. (Frontend Vite/React + pnpm)
+  # --------------------------------------------------------
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+
+volumes:
+  aset_data_mysql:

@@ -1,0 +1,707 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Apr 27, 2026 at 02:41 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `db_komputasi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fakultas`
+--
+
+CREATE TABLE `fakultas` (
+  `id_fakultas` int(11) NOT NULL,
+  `nama_fakultas` varchar(100) NOT NULL,
+  `id_univ` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `fakultas`
+--
+
+-- Range: 0.00 - 7.00
+-- ============================================================
+
+INSERT INTO `fakultas` (`id_fakultas`, `nama_fakultas`, `id_univ`) VALUES
+(1, 'Kedokteran', 2),
+(2, 'Ekonomi dan Bisnis', 2),
+(3, 'Ilmu Budaya', 2),
+(4, 'Hukum', 2),
+(5, 'Teknik', 2),
+(6, 'Pertanian', 2),
+(7, 'Peternakan', 2),
+(8, 'Mipa', 2),
+(9, 'Kedokteran Hewan', 2),
+(10, 'Teknologi Pertanian', 2),
+(11, 'Pariwisata', 2),
+(12, 'Ilmu Sosial dan Politik', 2),
+(13, 'Kelautan dan Perikanan', 2),
+(14, 'Pascasarjana', 2),
+(15, 'Kedokteran Tinggi', 2),
+(24, 'Teknik dan Kejuruan', 3),
+(25, 'Olahraga dan Kesehatan', 3),
+(26, 'Matematika dan Ilmu Pengetahuan Alam', 3),
+(27, 'Ilmu Pendidikan', 3),
+(28, 'Hukum dan Ilmu Sosial', 3),
+(29, 'Ekonomi', 3),
+(30, 'Bahasa dan Seni', 3),
+(31, 'Kedokteran', 3),
+(32, 'Keguruan dan Ilmu Pendidikan', 4),
+(33, 'Ekonomi dan Bisnis', 4),
+(34, 'Sains dan Teknologi', 4),
+(35, 'Hukum, Ilmu Sosial, dan Ilmu Politik', 4),
+(36, 'Sekolah Pascasarjana', 4),
+(37, 'Sekolah Vokasi', 4),
+(38, 'Pascasarjana', 5),
+(39, 'Teknik dan Perencanaan', 5),
+(40, 'Sastra', 5),
+(41, 'Pertanian, Sains, dan Teknologi', 5),
+(42, 'Kedokteran dan Ilmu Kesehatan', 5),
+(43, 'Ilmu Sosial dan Ilmu Politik', 5),
+(44, 'Hukum', 5),
+(45, 'Ekonomi dan Bisnis', 5),
+(46, 'Kedokteran', 6),
+(47, 'Bahasa Asing', 6),
+(48, 'Ekonomi dan Bisnis', 6),
+(49, 'Farmasi', 6),
+(50, 'Hukum', 6),
+(51, 'Kedokteran Gigi', 6),
+(52, 'Keguruan dan Ilmu Pendidikan', 6),
+(53, 'Pertanian dan Bisnis', 6),
+(54, 'Teknik', 6),
+(55, 'Pascasarjana', 6),
+(56, 'Teknik, Perencanaan dan Informatika', 7),
+(57, 'Ekonomi, Bisnis dan Pariwisata', 7),
+(58, 'Kesehatan dan Sains', 7),
+(59, 'Ilmu Agama, Seni dan Budaya', 7),
+(60, 'Pendidikan', 7),
+(61, 'Hukum', 7),
+(62, 'Bisnis dan Pariwisata', 8),
+(63, 'Pendidikan dan Humaniora', 8),
+(64, 'Kesehatan dan Sains', 8),
+(65, 'Kedokteran', 8),
+(66, 'Teknologi dan Informatika', 8),
+(67, 'Fakultas Ilmu Sosial dan Humaniora', 9),
+(68, 'Fakultas Sains dan Teknologi', 9),
+(69, 'Fakultas Ekonomi dan Bisnis', 9),
+(70, 'Fakultas Hukum', 9),
+(71, 'Fakultas Ekonomi dan Bisnis', 10),
+(72, 'Fakultas Hukum', 10),
+(73, 'Fakultas Sains dan Teknologi', 10),
+(74, 'Keguruan dan Ilmu Pendidikan', 11),
+(75, 'Ilmu Administrasi', 11),
+(76, 'Hukum', 11),
+(77, 'Ekonomi', 11),
+(78, 'Pertanian dan Teknik', 11),
+(79, 'Teknologi dan Ilmu Kesehatan', 12),
+(80, 'Humaniora dan Ilmu Sosial', 12),
+(81, 'Bahasa dan Seni', 13),
+(82, 'Ilmu Sosial', 13),
+(83, 'Sains dan Teknologi', 13),
+(84, 'Pendidikan Profesi Guru', 13),
+(85, 'Seni Pertunjukan', 14),
+(86, 'Seni Rupa dan Desain', 14),
+(87, 'Informatika dan Komputer', 15),
+(88, 'Bisnis dan Vokasi', 15),
+(89, 'Manajemen Perhotelan', 16),
+(90, 'Manajemen Pariwisata', 16),
+(91, 'Tata Boga', 16),
+(92, 'Manajemen Perhotelan', 16),
+(93, 'Bisnis Digital', 16),
+(94, 'Kewirausahaan', 16),
+(95, 'Teknologi Informasi dan Desain', 17),
+(96, 'Ekonomi dan Bisnis', 17),
+(97, 'Manajemen Data & Informasi', 18),
+(98, 'Pariwisata', 18),
+(99, 'Komputer Akuntansi dan Bisnis', 18),
+(100, 'Rekayasa Sistem Komputer', 18),
+(101, 'Desain Komunikasi Visual', 18),
+(102, 'Bisnis Digital', 18),
+(103, 'Desain Grafis dan Multimedia', 18),
+(104, 'Pariwisata', 19),
+(105, 'Teknik Elektro', 19),
+(106, 'Administrasi Bisnis', 19),
+(107, 'Akuntansi', 19),
+(108, 'Teknik Mesin', 19),
+(109, 'Teknik Sipil', 19),
+(110, 'Teknologi Informasi', 19),
+(111, 'Hospitaliti', 20),
+(112, 'Kepariwisataan', 20),
+(113, 'Akuntansi', 21),
+(114, 'Kepariwisataan', 21),
+(115, 'Elektro', 21);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prodi`
+--
+
+CREATE TABLE `prodi` (
+  `id_prodi` int(11) NOT NULL,
+  `nama_prodi` varchar(100) NOT NULL,
+  `id_fakultas` int(11) DEFAULT NULL,
+  `r_score` float(3,2) DEFAULT NULL,
+  `i_score` float(3,2) DEFAULT NULL,
+  `a_score` float(3,2) DEFAULT NULL,
+  `s_score` float(3,2) DEFAULT NULL,
+  `e_score` float(3,2) DEFAULT NULL,
+  `c_score` float(3,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `prodi`
+--
+INSERT INTO `prodi` (`id_prodi`, `nama_prodi`, `id_fakultas`, `r_score`, `i_score`, `a_score`, `s_score`, `e_score`, `c_score`) VALUES
+(1, 'Fisioterapi', 1, 2.50, 4.20, 2.00, 5.80, 3.50, 4.00),
+(2, 'Ilmu Keperawatam', 1, 2.50, 4.00, 2.00, 6.50, 3.00, 4.50),
+(3, 'Ilmu Kesehatan Masyarakat', 1, 2.50, 6.00, 2.00, 6.50, 4.00, 5.00),
+(4, 'Kedokteran Gigi', 1, 2.50, 6.00, 2.00, 5.50, 3.50, 4.00),
+(5, 'Pendidikan Dokter', 1, 2.50, 6.00, 1.50, 5.50, 3.50, 4.00),
+(6, 'Psikologi', 1, 2.50, 6.00, 4.00, 6.50, 3.00, 2.00),
+(7, 'Sp1 Ilmu Anestesi dan Terapi Intensif', 1, 2.50, 6.20, 1.80, 5.50, 3.20, 4.80),
+(8, 'Sp1 Ilmu Bedah', 1, 6.50, 5.20, 2.10, 4.80, 3.50, 5.80),
+(9, 'Sp1 Ilmu Kandungan', 1, 2.50, 6.20, 1.80, 5.50, 3.20, 4.80),
+(10, 'Sp1 Ilmu Orthopaedi dan Traumatologi', 1, 6.50, 6.00, 2.00, 5.50, 4.00, 5.00),
+(11, 'Sp1 Kardiologi', 1, 2.50, 6.20, 1.80, 5.50, 3.20, 4.80),
+(12, 'Sp1 Kesehatan Anak', 1, 2.50, 6.00, 2.00, 6.50, 3.00, 4.00),
+(13, 'Sp1 Kesehatan Kulit & Kelamin', 1, 2.50, 6.00, 1.00, 5.50, 3.00, 4.00),
+(14, 'Sp1 Mata', 1, 2.50, 6.20, 1.80, 3.50, 4.20, 5.50),
+(15, 'Sp1 Pathologi Anatomi', 1, 6.50, 6.00, 2.00, 4.00, 3.50, 5.50),
+(16, 'Sp1 Penyakit dalam', 1, 2.50, 6.20, 1.80, 5.50, 3.20, 4.80),
+(17, 'Sp1 Penyakit Syaraf', 1, 2.50, 6.20, 1.80, 5.50, 3.20, 4.50),
+(18, 'Sp1 Psikiatri', 1, 2.50, 6.20, 4.10, 5.80, 3.50, 4.50),
+(19, 'Sp1 THT', 1, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(20, 'Diploma III Akuntansi', 2, 2.50, 3.00, 1.50, 4.00, 5.50, 6.50),
+(21, 'Diploma III Perpajakan', 2, 2.50, 4.00, 1.50, 3.50, 5.00, 6.00),
+(22, 'Sarjana Ekonomi', 2, 2.50, 4.20, 3.80, 5.50, 6.20, 5.00),
+(23, 'Sarjana Manajemen', 2, 2.50, 3.00, 2.00, 5.50, 6.00, 4.50),
+(24, 'Sarjana Akuntansi', 2, 2.50, 4.00, 2.00, 5.00, 6.00, 6.50),
+(25, 'Magister Ilmu Ekonomi', 2, 2.50, 5.00, 2.00, 4.00, 6.00, 5.50),
+(26, 'Magister Manajemen', 2, 2.50, 4.00, 2.00, 5.50, 6.00, 5.00),
+(27, 'Magister Akuntansi', 2, 2.50, 4.20, 1.80, 3.50, 5.00, 6.20),
+(28, 'Doktor Ilmu Ekonomi', 2, 2.50, 6.00, 2.00, 4.00, 5.00, 3.50),
+(29, 'Doktor Manajemen', 2, 2.50, 4.20, 1.80, 5.50, 6.20, 3.80),
+(30, 'Doktor Ilmu Akuntansi', 2, 2.50, 6.00, 1.50, 4.00, 3.50, 5.50),
+(31, 'Pendidikan Profesi Akuntan (PPAk)', 2, 2.50, 4.00, 1.50, 5.00, 6.00, 6.50),
+(32, 'Antropologi Budaya', 3, 2.50, 6.00, 5.50, 4.00, 2.00, 1.50),
+(33, 'Arkeologi', 3, 4.50, 6.20, 5.80, 4.00, 3.50, 2.80),
+(34, 'ILMU Sejarah', 3, 2.50, 6.00, 5.00, 4.00, 2.00, 3.00),
+(35, 'Sastra BALI', 3, 2.00, 4.00, 6.00, 5.00, 3.00, 2.00),
+(36, 'Sastra Indonesia', 3, 2.00, 4.00, 6.00, 5.00, 3.00, 2.00),
+(37, 'Sastra Jepang', 3, 2.50, 5.00, 6.50, 4.00, 2.00, 1.50),
+(38, 'Sastra Inggris', 3, 2.50, 5.00, 6.50, 4.00, 2.00, 1.50),
+(39, 'Sastra JAWA KUNO', 3, 2.00, 6.00, 7.00, 4.00, 2.00, 1.00),
+(40, 'Teknik Elektro', 5, 6.50, 5.00, 2.00, 3.50, 4.50, 5.50),
+(41, 'Teknik Mesin', 5, 6.50, 4.20, 2.10, 3.50, 5.00, 4.80),
+(42, 'Teknik Sipil', 5, 6.50, 4.20, 2.50, 3.80, 4.50, 5.00),
+(43, 'Teknologi Informasi', 5, 6.50, 5.80, 4.20, 4.50, 5.00, 5.50),
+(44, 'Teknik Arsitektur', 5, 4.50, 3.00, 6.00, 2.50, 3.50, 2.00),
+(45, 'Teknik Industri', 5, 6.50, 5.50, 2.00, 3.50, 4.50, 5.00),
+(46, 'Teknik Lingkungan', 5, 6.20, 5.50, 2.80, 4.20, 3.80, 5.00),
+(47, 'Agribisnis', 6, 6.20, 4.50, 2.80, 5.10, 5.80, 4.20),
+(48, 'Agroteknologi', 6, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(49, 'Arsitektur Pertamanan', 6, 4.50, 5.20, 6.00, 4.00, 3.50, 2.50),
+(50, 'Sarjana Peternakan', 7, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(51, 'Magister Peternakan', 7, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(52, 'Doktor Peternakan', 7, 6.50, 5.00, 2.00, 4.00, 3.00, 5.50),
+(53, 'Biologi', 8, 2.50, 6.20, 4.10, 5.30, 3.50, 2.80),
+(54, 'Farmasi', 8, 2.50, 6.00, 2.00, 4.50, 3.50, 5.00),
+(55, 'Fisika', 8, 2.50, 6.50, 2.00, 3.00, 1.50, 1.00),
+(56, 'Teknik Informatika', 8, 6.50, 6.00, 4.00, 3.50, 5.00, 4.50),
+(57, 'Kimia', 8, 2.50, 6.20, 4.10, 3.50, 2.80, 5.00),
+(58, 'Matematika', 8, 2.50, 6.20, 4.10, 3.50, 2.80, 5.00),
+(59, 'Profesi Apoteker', 8, 2.50, 6.00, 1.00, 5.00, 3.00, 4.00),
+(60, 'Teknik Pertanian DAN Biosistem', 10, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(61, 'Teknologi Industri Pertanian', 10, 6.50, 5.00, 2.00, 4.00, 5.50, 6.00),
+(62, 'Magister Teknologi Pangan', 10, 5.50, 6.20, 2.50, 4.00, 3.50, 5.00),
+(63, 'Teknologi Pangan', 10, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(64, 'D4 Pariwisata', 11, 4.50, 2.00, 5.50, 6.00, 5.00, 3.50),
+(65, 'Destinasi Pariwisata', 11, 4.50, 2.00, 6.00, 5.50, 5.00, 3.00),
+(66, 'Industri Perjalanan Wisata', 11, 4.50, 2.00, 5.00, 6.00, 5.50, 3.50),
+(67, 'Administrasi Publik', 12, 2.50, 3.00, 1.50, 5.00, 4.50, 6.00),
+(68, 'D3 Perpustakaan', 12, 2.50, 5.00, 4.00, 6.00, 3.00, 5.50),
+(69, 'Hubungan Internasional', 12, 2.50, 5.00, 4.00, 6.00, 5.50, 3.50),
+(70, 'ILMU Komunikasi', 12, 2.50, 4.00, 5.50, 6.50, 5.00, 3.50),
+(71, 'ILMU Politik', 12, 2.50, 5.00, 4.00, 6.00, 5.50, 3.50),
+(72, 'ILMU Sosiologi', 12, 2.50, 5.50, 4.00, 6.00, 3.50, 2.00),
+(73, 'ILMU Kelautan', 13, 6.50, 5.80, 2.20, 4.50, 3.80, 4.20),
+(74, 'Manajemen Sumberdaya Perairan', 13, 4.50, 5.20, 2.80, 4.00, 5.50, 4.20),
+(75, 'S2 Agribisnis', 14, 5.50, 4.20, 2.80, 4.50, 5.00, 4.80),
+(76, 'S2 Agroteknologi', 14, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(77, 'S2 Akuntansi', 14, 2.50, 4.20, 1.80, 3.50, 5.00, 6.20),
+(78, 'S2 Bioteknologi Pertanian', 14, 2.50, 6.00, 1.50, 4.00, 2.00, 3.50),
+(79, 'S2 Ergonomi Fisiologi Kerja', 14, 6.50, 5.80, 2.20, 4.50, 3.80, 5.20),
+(80, 'S2 Fisiologi Olahraga', 14, 2.50, 6.20, 1.80, 4.50, 3.20, 2.00),
+(81, 'S2 Ilmu Biologi', 14, 2.50, 6.20, 4.10, 5.30, 3.80, 2.90),
+(82, 'S2 Ilmu Biomedik', 14, 2.50, 6.20, 2.00, 4.50, 3.00, 5.00),
+(83, 'S2 Ilmu dan Teknologi Pangan', 14, 5.50, 6.20, 2.50, 4.00, 3.50, 5.00),
+(84, 'S2 Ilmu Ekonomi', 14, 2.50, 5.00, 2.00, 4.50, 6.00, 5.50),
+(85, 'S2 Ilmu Hukum', 14, 2.50, 6.00, 3.00, 5.00, 4.00, 5.50),
+(86, 'S2 Ilmu Kenotariatan', 14, 2.50, 4.20, 1.80, 5.50, 3.80, 6.20),
+(87, 'S2 Ilmu Kesehatan Masyarakat', 14, 2.50, 6.00, 3.00, 6.50, 4.00, 5.00),
+(88, 'S2 Ilmu Lingkungan', 14, 2.50, 6.00, 4.00, 5.50, 3.00, 2.00),
+(89, 'S2 Ilmu Peternakan', 14, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(90, 'S2 Kajian Budaya', 14, 2.00, 6.00, 7.00, 5.00, 3.00, 2.00),
+(91, 'S2 Kedokteran Hewan', 14, 2.50, 6.20, 1.80, 5.50, 3.20, 4.50),
+(92, 'S2 Kimia Terapan', 14, 4.50, 6.20, 2.80, 3.50, 4.00, 5.00),
+(93, 'S2 Lahan Kering', 14, 6.50, 5.80, 2.20, 3.50, 4.20, 5.00),
+(94, 'S2 Linguistik', 14, 2.00, 6.00, 5.00, 4.00, 2.00, 1.00),
+(95, 'S2 Manajemen', 14, 2.50, 4.00, 2.00, 5.50, 6.50, 5.00),
+(96, 'S2 Pariwisata', 14, 2.50, 4.00, 5.50, 6.00, 5.00, 3.50),
+(97, 'S2 Teknik Arsitektur', 14, 4.50, 5.20, 6.80, 3.80, 4.20, 2.50),
+(98, 'S2 Teknik Elektro', 14, 6.50, 5.80, 2.20, 3.50, 4.80, 5.20),
+(99, 'S2 Teknik Mesin', 14, 6.50, 5.00, 2.00, 3.50, 4.00, 5.50),
+(100, 'S3 Ilmu Ekonomi', 14, 2.50, 5.00, 2.00, 4.00, 6.00, 5.50),
+(101, 'S3 Ilmu Hukum', 14, 2.50, 6.20, 4.10, 5.80, 5.50, 6.80),
+(102, 'S3 Ilmu Kedokteran', 14, 2.00, 6.50, 1.50, 5.00, 3.00, 4.00),
+(103, 'S3 Ilmu Lingkungan', 14, 2.50, 6.20, 4.10, 5.50, 3.80, 2.00),
+(104, 'S3 Ilmu Manajemen', 14, 2.50, 4.00, 1.50, 5.50, 6.00, 5.00),
+(105, 'S3 Ilmu Pertanian', 14, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(106, 'S3 Ilmu Peternakan', 14, 6.50, 5.20, 2.10, 4.80, 3.50, 5.00),
+(107, 'S3 Ilmu Teknik', 14, 6.50, 5.50, 2.00, 3.00, 4.00, 5.00),
+(108, 'S3 Linguistik', 14, 2.00, 6.00, 5.00, 4.00, 2.00, 1.00),
+(109, 'S3 Pariwisata', 14, 2.50, 4.20, 5.80, 6.50, 5.00, 3.80),
+(110, 'Teknologi Rekayasa Perangkat Lunak (Alih Jenjang D3 Manajemen Informatika)', 24, 6.50, 5.00, 2.00, 4.00, 5.50, 6.00),
+(111, 'Teknologi Rekayasa Sistem Elektronika (Alih Jenjang D3 Teknik Elektronika)', 24, 6.50, 5.00, 2.00, 3.50, 4.00, 5.50),
+(112, 'Pendidikan Teknik Informatika', 24, 6.50, 5.00, 4.00, 5.50, 4.50, 5.00),
+(113, 'Sistem Informasi', 24, 4.50, 6.20, 2.80, 3.50, 5.00, 4.00),
+(114, 'Ilmu Komputer', 24, 6.50, 6.00, 4.00, 4.50, 5.00, 5.50),
+(115, 'Pendidikan Teknik Elektro', 24, 6.50, 5.00, 2.00, 4.00, 5.50, 4.50),
+(116, 'Pendidikan Teknik Mesin', 24, 6.50, 4.20, 2.10, 3.80, 4.50, 5.80),
+(117, 'Pendidikan Kesejahteraan Keluarga', 24, 2.50, 4.00, 3.50, 6.50, 4.50, 5.00),
+(118, 'Pendidikan Vokasional Seni Kuliner', 24, 4.50, 2.00, 6.00, 5.50, 3.50, 2.50),
+(119, 'Pendidikan Jasmani Kesehatan dan Rekreasi', 25, 6.50, 2.00, 4.00, 6.00, 4.50, 3.50),
+(120, 'Pendidikan Kepelatihan Olahraga', 25, 6.50, 2.00, 4.00, 5.50, 3.50, 2.50),
+(121, 'Ilmu Keolahragaan', 25, 6.50, 2.00, 4.00, 5.50, 3.50, 2.50),
+(122, 'Kimia Terapan (Alih Jenjang D3 Analis Kimia)', 26, 6.50, 6.00, 2.00, 4.00, 3.50, 5.50),
+(123, 'Bioteknologi Perikanan (Alih Jenjang D3 Budidaya Kelautan)', 26, 5.50, 6.20, 2.80, 4.50, 3.80, 4.20),
+(124, 'Pendidikan Matematika', 26, 2.50, 6.00, 3.00, 5.50, 2.00, 4.00),
+(125, 'Pendidikan Biologi', 26, 2.50, 6.00, 4.00, 5.50, 3.00, 2.00),
+(126, 'Pendidikan Kimia', 26, 2.50, 6.00, 2.00, 5.50, 3.00, 4.00),
+(127, 'Pendidikan Fisika', 26, 5.50, 6.20, 2.80, 4.50, 3.20, 4.00),
+(128, 'Pendidikan IPA', 26, 4.50, 6.20, 2.80, 5.50, 3.20, 4.00),
+(129, 'Matematika', 26, 2.50, 6.20, 1.80, 3.50, 2.00, 4.00),
+(130, 'Biologi', 26, 2.50, 6.20, 4.10, 5.30, 3.50, 2.80),
+(131, 'Kimia', 26, 2.50, 6.20, 1.80, 3.50, 2.00, 4.00),
+(132, 'Fisika', 26, 2.50, 6.50, 2.00, 3.00, 1.50, 1.00),
+(133, 'Akuakultur', 26, 6.50, 5.20, 2.10, 4.80, 3.50, 5.00),
+(134, 'Teknologi Pendidikan', 27, 4.50, 5.20, 3.80, 6.00, 4.00, 5.50),
+(135, 'Bimbingan dan Konseling', 27, 2.50, 4.00, 3.50, 6.50, 4.50, 5.00),
+(136, 'Pendidikan Guru Sekolah Dasar', 27, 2.50, 4.00, 3.00, 6.50, 4.50, 5.00),
+(137, 'Pendidikan Guru Pendidikan Anak Usia Dini', 27, 2.50, 4.00, 5.50, 6.50, 3.50, 4.50),
+(138, 'Perpustakaan', 28, 2.50, 6.00, 4.00, 5.50, 3.00, 5.00),
+(139, 'Teknologi Rekayasa Penginderaan Jauh (Alih Jenjang D3 Survey dan Pemetaan)', 28, 6.50, 5.00, 2.00, 3.50, 4.00, 5.50),
+(140, 'Pendidikan Sejarah', 28, 2.50, 5.00, 4.00, 6.00, 3.00, 2.00),
+(141, 'Pendidikan Geografi', 28, 4.50, 6.20, 2.80, 5.50, 3.20, 4.00),
+(142, 'Ilmu Hukum', 28, 2.50, 4.20, 2.00, 5.50, 3.80, 6.20),
+(143, 'Pendidikan Sosiologi', 28, 2.50, 5.50, 4.00, 6.50, 3.00, 2.00),
+(144, 'Pendidikan Pancasila dan Kewarganegaraan', 28, 2.50, 4.00, 3.00, 6.50, 4.50, 5.00),
+(145, 'Geografi', 28, 4.50, 6.20, 2.80, 3.50, 2.20, 3.80),
+(146, 'Pengelolaan Perhotelan (Alih Jenjang D3 Perhotelan)', 29, 2.50, 1.50, 3.00, 5.50, 4.50, 3.50),
+(147, 'Akuntansi Sektor Publik (Alih Jenjang D3 Akuntansi)', 29, 2.50, 4.00, 1.50, 3.50, 5.00, 6.00),
+(148, 'Pendidikan Ekonomi', 29, 2.50, 4.20, 3.80, 6.50, 5.80, 4.50),
+(149, 'Manajemen', 29, 2.50, 3.00, 2.00, 5.00, 6.00, 4.50),
+(150, 'Akuntansi', 29, 2.50, 4.00, 1.50, 3.00, 5.50, 6.50),
+(151, 'Desain Komunikasi Visual', 30, 2.50, 4.00, 6.50, 5.00, 3.50, 2.00),
+(152, 'Bahasa Inggris untuk Komunikasi Bisnis dan Profesional (Alih Jenjang D3 Bahasa Inggris)', 30, 2.50, 4.20, 5.80, 6.50, 5.20, 3.80),
+(153, 'Pendidikan Bahasa dan Sastra Indonesia', 30, 2.00, 4.00, 6.00, 6.00, 3.00, 2.00),
+(154, 'Pendidikan Bahasa Inggris', 30, 2.00, 4.00, 6.00, 7.00, 3.00, 1.00),
+(155, 'Pendidikan Bahasa Jepang', 30, 2.00, 4.00, 6.00, 5.00, 3.00, 2.00),
+(156, 'Pendidikan Seni Rupa', 30, 2.00, 3.00, 6.50, 5.00, 2.50, 1.50),
+(157, 'Pendidikan Bahasa Bali', 30, 2.00, 4.00, 6.00, 5.00, 3.00, 2.00),
+(158, 'Kebidanan', 31, 2.50, 4.20, 1.80, 6.50, 3.50, 5.00),
+(159, 'Kedokteran', 31, 2.50, 6.00, 2.00, 5.50, 3.50, 4.00),
+(160, 'Keperawatan', 31, 2.50, 4.20, 2.00, 6.50, 3.80, 5.50),
+(161, 'Pendidikan Profesi Dokter', 31, 2.00, 6.00, 1.00, 5.00, 3.00, 4.00),
+(162, 'Pendidikan Profesi Ners', 31, 2.50, 4.20, 1.80, 6.50, 3.50, 5.00),
+(163, 'Pendidikan Profesi Bidan', 31, 2.50, 4.20, 2.00, 6.50, 3.80, 5.20),
+(164, 'Pendidikan Bahasa dan Sastra Indonesia', 32, 2.00, 4.00, 6.00, 5.00, 3.00, 2.00),
+(165, 'Pendidikan Bahasa Inggris', 32, 2.00, 4.00, 6.00, 7.00, 3.00, 1.00),
+(166, 'Pendidikan Biologi', 32, 2.50, 6.00, 4.00, 5.50, 3.00, 2.00),
+(167, 'Pendidikan Fisika', 32, 5.50, 6.20, 2.80, 4.50, 3.20, 4.00),
+(168, 'Pendidikan Kimia', 32, 2.50, 6.00, 2.00, 5.50, 3.50, 4.00),
+(169, 'Pendidikan Matematika', 32, 2.50, 6.00, 3.00, 5.50, 2.00, 4.00),
+(170, 'Pendidikan Ekonomi', 32, 2.50, 3.00, 2.00, 5.50, 4.50, 4.00),
+(171, 'Pendidikan Pancasila dan Kewarganegaraan', 32, 2.50, 4.00, 3.00, 6.50, 4.50, 5.00),
+(172, 'Mata Kuliah Umum', 32, 2.50, 4.00, 3.50, 5.50, 2.00, 3.00),
+(173, 'Teknologi Pendidikan', 32, 4.50, 5.20, 3.80, 6.00, 4.00, 5.50),
+(174, 'Pendidikan Guru Sekolah Dasar (PGSD)', 32, 2.50, 4.00, 3.00, 6.50, 4.50, 5.00),
+(175, 'Pendidikan Guru Pendidikan Anak Usia Dini (PGPAUD)', 32, 2.50, 4.00, 5.50, 6.50, 3.50, 4.50),
+(176, 'Program Pendidikan Profesi Guru (PPG)', 32, 2.50, 4.00, 3.50, 6.50, 4.50, 5.00),
+(177, 'Pendidikan Agama Islam (PAI)', 32, 2.50, 4.00, 3.50, 6.00, 2.00, 4.50),
+(178, 'Manajemen', 33, 2.50, 3.00, 2.00, 5.00, 6.00, 4.50),
+(179, 'Ekonomi Pembangunan', 33, 2.50, 4.20, 1.80, 5.50, 6.00, 3.80),
+(180, 'Ekonomi Syariah', 33, 2.50, 4.20, 1.80, 5.50, 6.00, 3.50),
+(181, 'Akuntansi', 33, 2.50, 4.00, 1.50, 3.50, 5.50, 6.50),
+(182, 'Akuntansi Keuangan Publik', 33, 2.50, 4.20, 1.80, 3.50, 5.00, 6.50),
+(183, 'Pariwisata', 33, 4.50, 2.00, 5.50, 6.00, 4.00, 2.50),
+(184, 'Kewirausahaan', 33, 4.50, 2.00, 3.00, 5.00, 6.50, 2.50),
+(185, 'Statistika', 34, 4.50, 6.20, 2.80, 3.50, 4.00, 5.50),
+(186, 'Matematika', 34, 2.50, 6.20, 1.80, 3.50, 2.00, 4.00),
+(187, 'Biologi', 34, 2.50, 6.20, 4.10, 5.30, 3.50, 2.80),
+(188, 'Teknologi Pangan', 34, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(189, 'Agribisnis', 34, 6.20, 4.50, 2.80, 5.10, 5.80, 4.20),
+(190, 'Perencanaan Wilayah dan Kota', 34, 4.50, 5.20, 3.80, 5.50, 4.20, 4.80),
+(191, 'Sistem Informasi', 34, 5.50, 6.20, 4.00, 4.50, 5.00, 5.50),
+(192, 'Sains Data', 34, 4.50, 6.20, 2.80, 3.50, 4.00, 5.00),
+(193, 'Ilmu Administrasi Negara (S1)', 35, 2.50, 3.00, 1.50, 5.50, 6.00, 6.50),
+(194, 'Ilmu Administrasi Bisnis (S1)', 35, 2.50, 1.50, 1.00, 4.00, 6.00, 5.50),
+(195, 'Ilmu Hukum (S1)', 35, 2.50, 4.20, 2.80, 5.50, 4.80, 6.20),
+(196, 'Lmu Pemerintahan (S1)', 35, 2.50, 4.20, 2.00, 6.00, 5.50, 5.00),
+(197, 'Ilmu Komunikasi (S1)', 35, 2.50, 4.00, 5.50, 6.50, 5.00, 3.50),
+(198, 'Ilmu Perpustakaan (S1)', 35, 2.50, 5.00, 4.00, 6.00, 3.00, 5.50),
+(199, 'Sosiologi (S1)', 35, 2.50, 6.00, 4.00, 6.50, 3.00, 2.00),
+(200, 'Sastra Inggris (S1)', 35, 2.00, 5.00, 6.00, 4.00, 2.00, 1.00),
+(201, 'Perpajakan (S1)', 35, 2.50, 4.20, 1.80, 3.50, 5.80, 6.20),
+(202, 'Magister Studi Lingkungan', 36, 2.50, 6.00, 4.00, 5.50, 3.00, 2.00),
+(203, 'Magister Manajemen Perikanan', 36, 2.50, 4.20, 1.80, 5.50, 6.00, 3.50),
+(204, 'Magister Administrasi Publik', 36, 2.50, 4.00, 2.00, 6.00, 5.50, 6.50),
+(205, 'Magister Manajemen', 36, 2.50, 4.00, 2.00, 5.50, 6.00, 5.00),
+(206, 'Magister Pendidikan Dasar', 36, 2.50, 4.00, 3.00, 6.50, 2.00, 5.00),
+(207, 'Magister Pendidikan Matematika', 36, 2.50, 6.00, 4.00, 5.50, 3.50, 4.50),
+(208, 'Magister Pendidikan Bahasa Inggris', 36, 2.50, 4.20, 5.80, 6.50, 3.80, 2.00),
+(209, 'Magister Pendidikan Anak Usia Dini', 36, 2.50, 4.00, 5.00, 6.50, 3.50, 4.50),
+(210, 'Magister Hukum', 36, 2.50, 5.00, 3.00, 5.50, 4.00, 6.00),
+(211, 'Doktor Ilmu Manajemen', 36, 2.50, 6.00, 2.00, 5.50, 6.50, 4.00),
+(212, 'Doktor Administrasi Publik', 36, 2.50, 4.20, 1.80, 6.50, 5.80, 4.50),
+(213, 'Teknologi Informasi', 37, 6.50, 5.80, 4.20, 4.50, 5.00, 5.50),
+(214, 'Ankuntansi Bisnis Digital', 37, 2.50, 4.00, 1.50, 3.50, 5.50, 6.00),
+(215, 'Manajemen Logistik', 37, 4.50, 2.00, 1.50, 5.00, 6.00, 5.50),
+(216, 'Magister ILMU Biomedis', 38, 2.50, 6.20, 4.10, 5.50, 3.80, 4.50),
+(217, 'Magister Akuntansi', 38, 2.50, 4.20, 1.80, 3.50, 5.00, 6.20),
+(218, 'Magister Rekayasa Infrastruktur DAN Lingkungan', 38, 6.50, 5.50, 2.00, 4.00, 5.00, 5.50),
+(219, 'Magister Administrasi Publik', 38, 2.50, 4.00, 2.00, 6.00, 5.50, 6.50),
+(220, 'Magister Manajemen', 38, 2.50, 4.00, 2.00, 5.50, 6.00, 5.00),
+(221, 'Magister ILMU Hukum', 38, 2.50, 6.20, 4.10, 5.80, 3.90, 6.50),
+(222, 'Magister Linguistik', 38, 2.50, 6.20, 5.80, 4.50, 2.00, 1.80),
+(223, 'Hukum Program Doktor', 38, 2.50, 6.00, 4.00, 5.50, 5.00, 6.50),
+(224, 'Magister Kenotariatan', 38, 2.50, 4.20, 1.80, 5.50, 6.00, 6.50),
+(225, 'Magister Saint Pertanian', 38, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(226, 'Teknik Sipil', 39, 6.50, 4.20, 2.10, 3.50, 4.80, 5.00),
+(227, 'Arsitektur', 39, 4.50, 5.20, 6.80, 4.00, 3.50, 2.80),
+(228, 'Teknik Komputer', 39, 6.50, 5.50, 2.00, 3.00, 4.00, 5.00),
+(229, 'Profesi Insinyur', 39, 6.50, 5.00, 2.00, 3.50, 4.00, 5.50),
+(230, 'Profesi Arsitek', 39, 2.50, 4.20, 6.80, 3.50, 5.00, 2.00),
+(231, 'Sastra Inggris', 40, 2.50, 5.00, 6.50, 4.00, 2.00, 1.50),
+(232, 'Agroteknologi', 41, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(233, 'Teknologi Pangan DAN Hasil Pertanian', 41, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(234, 'Manajemen Sumber DAYA Perairan', 41, 4.50, 5.20, 2.80, 5.50, 4.20, 3.80),
+(235, 'Peternakan', 41, 6.20, 4.50, 2.10, 4.80, 3.50, 5.20),
+(236, 'Kedokteran', 42, 2.50, 6.00, 2.00, 5.50, 3.50, 4.00),
+(237, 'Pendidikan Profesi Dokter', 42, 2.00, 6.00, 1.00, 5.00, 3.00, 4.00),
+(238, 'Ilmu Pemerintahan', 43, 2.50, 4.00, 2.00, 6.00, 5.50, 5.00),
+(239, 'Administrasi Publik/Negara', 43, 2.50, 3.00, 1.50, 5.00, 4.50, 6.00),
+(240, 'Hukum Kepengacaraan', 44, 2.50, 4.20, 3.80, 5.50, 4.80, 6.20),
+(241, 'Hukum Pemerintahan', 44, 2.50, 4.20, 1.80, 5.50, 3.80, 6.20),
+(242, 'Hukum Bisnis dan Kenotariatan', 44, 2.50, 4.20, 1.80, 5.50, 6.00, 5.00),
+(243, 'Pengembangan Hukum Lokal', 44, 2.50, 5.00, 3.00, 6.00, 4.00, 5.50),
+(244, 'Ekonomi Pembangunan', 45, 2.50, 4.20, 1.80, 5.50, 6.00, 3.50),
+(245, 'Manajemen', 45, 2.50, 3.00, 1.50, 4.00, 6.00, 5.50),
+(246, 'Akuntansi', 45, 2.50, 4.00, 1.50, 3.50, 5.00, 6.50),
+(247, 'Akuntansi Perpajakan', 45, 2.50, 4.20, 1.80, 3.50, 5.50, 6.20),
+(248, 'Sarjana Kedokteran', 46, 2.50, 6.00, 2.00, 5.50, 3.50, 4.00),
+(249, 'Pendidikan Profesi Dokter', 46, 2.00, 6.00, 1.00, 5.00, 3.00, 4.00),
+(250, 'Sastra Inggris', 47, 2.50, 5.00, 6.50, 4.00, 2.00, 1.50),
+(251, 'Sastra Jepang', 47, 2.50, 5.00, 6.50, 4.00, 2.00, 1.50),
+(252, 'Akuntansi', 48, 2.50, 4.00, 1.50, 3.50, 5.00, 6.50),
+(253, 'Manajemen', 48, 2.50, 3.00, 1.50, 5.00, 6.00, 4.50),
+(254, 'Ilmu Manajemen', 48, 2.50, 3.00, 1.50, 5.00, 6.00, 4.50),
+(255, 'Sarjana Farmasi', 49, 2.50, 6.00, 2.00, 5.50, 3.50, 4.00),
+(256, 'Diploma 3 Farmasi', 49, 2.50, 6.00, 1.50, 4.00, 3.00, 5.50),
+(257, 'Sarjana Ilmu Hukum', 50, 2.50, 4.20, 3.80, 5.50, 4.80, 6.20),
+(258, 'Magister Hukum', 50, 2.50, 5.00, 3.00, 5.50, 4.00, 6.00),
+(259, 'Sarjana Kedokteran Gigi', 51, 2.50, 6.00, 2.00, 5.50, 3.50, 4.00),
+(260, 'Profesi Dokter Gigi', 51, 2.50, 6.00, 2.00, 5.50, 3.50, 4.00),
+(261, 'Pendidikan Bahasa & Sastra Indonesia', 52, 2.00, 4.00, 6.00, 5.00, 3.00, 2.00),
+(262, 'Pendidikan Bahasa Inggris', 52, 2.50, 4.20, 6.00, 6.50, 3.80, 2.00),
+(263, 'Pendidikan Biologi', 52, 2.00, 6.00, 4.00, 5.00, 3.00, 2.00),
+(264, 'Pendidikan Matematika', 52, 2.50, 6.00, 3.00, 5.50, 2.00, 4.00),
+(265, 'Pendidikan Sejarah', 52, 2.50, 5.00, 4.00, 6.00, 3.00, 2.00),
+(266, 'Magister Pendidikan Bahasa Iggris', 52, 2.50, 4.20, 5.80, 6.50, 3.80, 2.00),
+(267, 'Pendidikan Profesi Guru', 52, 2.50, 4.00, 3.00, 6.50, 4.50, 5.00),
+(268, 'Agribisnis', 53, 6.20, 4.50, 2.80, 5.10, 5.80, 4.20),
+(269, 'Agroteknologi', 53, 6.50, 5.20, 2.80, 4.50, 3.80, 5.00),
+(270, 'Teknik Sipil', 54, 6.50, 4.20, 2.10, 3.50, 4.80, 5.00),
+(271, 'Teknik Lingkungan', 54, 6.50, 5.20, 2.80, 4.50, 3.80, 5.00),
+(272, 'Teknologi Informasi', 54, 6.50, 5.50, 4.00, 4.50, 5.00, 5.50),
+(273, 'Magister Perencanaan Wilayah & Perdesaan', 55, 4.50, 6.20, 3.80, 5.50, 4.20, 5.00),
+(274, 'Sistem Informasi', 56, 5.50, 6.20, 4.00, 4.50, 5.00, 5.50),
+(275, 'Teknik Sipil', 56, 6.50, 4.20, 2.50, 3.80, 4.50, 5.80),
+(276, 'Perencanaan Wilayah dan Kota', 56, 4.50, 5.20, 3.80, 5.50, 4.20, 4.80),
+(277, 'Manajemen', 57, 2.50, 3.00, 1.50, 5.00, 6.00, 4.50),
+(278, 'Akuntansi', 57, 2.50, 4.00, 1.50, 3.50, 5.50, 6.50),
+(279, 'Magister Sarjana', 57, 2.50, 6.20, 4.10, 5.80, 3.50, 4.50),
+(280, 'Biologi', 58, 2.50, 6.20, 4.10, 5.30, 3.80, 2.90),
+(281, 'Kesehatan Ayurweda', 58, 2.50, 6.00, 4.00, 5.50, 3.00, 2.00),
+(282, 'Fisioterapi', 58, 2.50, 4.20, 2.00, 5.80, 3.50, 4.00),
+(283, 'Pengobatan Tradisional Indonesia', 58, 2.50, 4.20, 3.80, 5.50, 2.00, 1.80),
+(284, 'Ilmu Filsafat Hindu', 59, 2.00, 6.00, 5.00, 4.00, 2.00, 1.00),
+(285, 'Magister Ilmu Agama dan Kebudayaan', 59, 2.50, 6.00, 5.00, 6.50, 3.00, 4.00),
+(286, 'Doktor Ilmu Agama dan Kebudayaan', 59, 2.50, 6.00, 4.00, 5.50, 3.00, 2.00),
+(287, 'Pendidikan Agama Hindu', 60, 2.50, 4.20, 5.80, 6.50, 3.80, 4.50),
+(288, 'Pendidikan Seni Tari Keagamaan Hindu', 60, 2.00, 1.50, 6.50, 5.00, 2.50, 1.00),
+(289, 'Pendidikan Seni Karawitan Keagamaan Hindu', 60, 2.00, 3.00, 6.00, 5.00, 2.00, 1.00),
+(290, 'Pendidikan Seni Rupa dan Ornamen Hindu', 60, 2.00, 1.50, 6.50, 5.00, 2.50, 1.00),
+(291, 'Magister Pendidikan Agama Hindu', 60, 2.50, 4.20, 3.80, 6.50, 2.00, 3.00),
+(292, 'Doktor Pendidikan Agama Hindu', 60, 2.50, 4.20, 3.80, 6.50, 2.00, 4.50),
+(293, 'Hukum Agama Hindu', 61, 2.50, 5.00, 4.00, 6.00, 3.50, 5.50),
+(294, 'Hukum Adat', 61, 2.50, 4.20, 3.80, 5.50, 4.50, 6.20),
+(295, 'Manajemen', 62, 2.50, 3.00, 1.50, 5.00, 6.00, 4.50),
+(296, 'Akuntansi', 62, 2.50, 4.00, 1.50, 3.50, 5.50, 6.50),
+(297, 'Magister Manajemen', 62, 2.50, 4.00, 2.00, 5.50, 6.00, 5.00),
+(298, 'Manajemen Perhotelan', 62, 2.50, 1.50, 3.00, 5.50, 6.00, 4.00),
+(299, 'Manajemen Pemasaran', 62, 2.50, 1.50, 1.00, 4.00, 6.00, 3.50),
+(300, 'Pendidikan Guru PAUD', 63, 2.50, 4.00, 3.50, 6.50, 2.00, 4.50),
+(301, 'Pendidikan Vokasional Kesejahteraan Keluarga', 63, 4.50, 2.00, 3.00, 6.00, 3.50, 5.00),
+(302, 'Sastra Inggris', 63, 2.50, 5.00, 6.50, 4.00, 2.00, 1.50),
+(303, 'Ilmu Gizi', 64, 2.50, 6.00, 2.00, 5.50, 3.00, 4.00),
+(304, 'Psikologi', 64, 2.50, 6.20, 4.80, 6.50, 3.20, 2.80),
+(305, 'Perekam dan Informasi Kesehatan', 64, 2.50, 4.20, 1.80, 5.50, 3.50, 6.20),
+(306, 'Biologi', 64, 2.50, 6.20, 4.10, 5.30, 3.80, 2.90),
+(307, 'Manajemen Informasi Kesehatan', 64, 2.50, 4.20, 1.80, 5.50, 3.80, 6.20),
+(308, 'Kedokteran', 65, 2.50, 6.00, 2.00, 5.50, 3.50, 4.00),
+(309, 'Profesi Dokter', 65, 2.00, 6.00, 1.00, 5.00, 3.00, 4.00),
+(310, 'Pendidikan Profesi Fisioterapis Program Profesi', 65, 4.50, 5.20, 2.80, 6.50, 3.20, 4.80),
+(311, 'Fisioterapi', 65, 2.50, 4.20, 2.00, 5.80, 3.50, 4.00),
+(312, 'Informatika', 66, 5.50, 6.20, 4.80, 4.20, 5.00, 4.50),
+(313, 'Sistem Informasi', 66, 5.50, 6.20, 4.00, 4.50, 5.00, 5.50),
+(314, 'Administrasi Publik', 67, 2.50, 3.00, 1.50, 5.50, 4.50, 6.00),
+(315, 'Arsitektur', 68, 4.50, 5.20, 6.80, 4.00, 3.50, 2.00),
+(316, 'Teknik Sipil', 68, 6.50, 4.20, 2.50, 3.80, 4.50, 5.20),
+(317, 'Manajemen', 69, 2.50, 3.00, 1.50, 5.00, 6.00, 4.50),
+(318, 'Sarjana Hukum', 70, 2.50, 4.20, 3.80, 5.50, 4.50, 6.20),
+(319, 'Magister Hukum', 70, 2.50, 5.00, 3.00, 5.50, 4.00, 6.00),
+(320, 'Ekonomi Pembangunan', 71, 2.50, 4.00, 1.50, 5.50, 6.00, 3.50),
+(321, 'Kewirausahaan', 71, 2.50, 3.00, 4.00, 5.50, 6.50, 2.00),
+(322, 'Ilmu Hukum', 72, 2.50, 4.20, 2.00, 5.50, 4.80, 6.20),
+(323, 'Agroteknologi', 73, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(324, 'Agribisnis', 73, 6.20, 4.50, 2.80, 5.10, 5.80, 4.20),
+(325, 'Sistem Informasi', 73, 5.50, 6.20, 4.00, 4.50, 5.00, 5.50),
+(326, 'Teknologi Pangan', 79, 6.50, 5.00, 2.00, 4.00, 3.50, 5.50),
+(327, 'Teknik Biomedis', 79, 5.50, 6.20, 2.80, 4.50, 3.80, 4.20),
+(328, 'Gizi', 79, 2.50, 6.00, 2.00, 5.50, 3.00, 4.00),
+(329, 'Farmasi', 79, 2.50, 6.00, 2.00, 4.50, 3.50, 5.00),
+(330, 'Sistem Informasi', 79, 5.50, 6.20, 4.00, 4.50, 5.00, 5.50),
+(331, 'Psikologi', 80, 2.50, 6.20, 4.80, 6.50, 3.20, 2.80),
+(332, 'Akuntansi', 80, 2.50, 4.00, 1.50, 3.50, 5.50, 6.50),
+(333, 'Hubungan Masyarakat', 80, 2.00, 3.00, 4.00, 6.00, 5.00, 4.00),
+(334, 'Bahasa Inggris', 80, 2.50, 5.00, 6.00, 5.50, 3.50, 2.00),
+(335, 'Hukum', 80, 2.50, 4.20, 2.00, 5.50, 4.80, 6.20),
+(366, 'Pendidikan Bahasa Indonesia dan Daerah', 81, 2.00, 4.00, 6.00, 7.00, 3.00, 2.00),
+(367, 'Pendidikan Seni Rupa', 81, 2.00, 3.00, 6.50, 5.00, 2.50, 1.50),
+(368, 'Pendidikan Seni Drama Tari dan Musik', 81, 2.00, 3.00, 6.50, 5.50, 2.50, 1.50),
+(369, 'Pendidikan Bahasa Indonesia Program Magister', 81, 2.00, 4.00, 5.00, 6.00, 3.00, 2.00),
+(370, 'Pendidikan Bahasa Bali', 81, 2.00, 4.00, 6.00, 5.00, 3.00, 2.00),
+(389, 'Bimbingan dan Konseling', 82, 2.00, 4.00, 3.00, 6.00, 2.00, 4.00),
+(390, 'Pendidikan Sejarah', 82, 2.50, 5.00, 4.00, 6.00, 3.00, 2.00),
+(391, 'Pendidikan Ekonomi', 82, 2.50, 4.20, 3.80, 6.50, 5.80, 4.50),
+(392, 'Kewirausahaan', 82, 2.50, 4.00, 3.00, 5.50, 6.50, 2.00),
+(393, 'Pendidikan Jasmani Kesehatan dan Rekreasi', 83, 6.50, 2.00, 4.00, 6.00, 4.50, 3.50),
+(394, 'Pendidikan Matematika', 83, 2.50, 6.00, 2.00, 5.50, 3.00, 4.00),
+(395, 'Pendidikan Biologi', 83, 2.50, 6.00, 4.00, 5.50, 3.00, 4.50),
+(396, 'Teknik Informatika', 83, 6.50, 5.80, 4.20, 3.50, 5.00, 4.80),
+(397, 'Sistem Informasi', 83, 5.50, 6.20, 4.00, 4.50, 5.00, 5.50),
+(398, 'Pendidikan Profesi Guru', 84, 2.50, 4.00, 3.00, 6.50, 4.50, 5.00),
+(399, 'Program Studi Tari', 85, 2.00, 1.50, 6.50, 4.00, 2.50, 1.00),
+(400, 'Program Studi Seni Karawitan', 85, 2.00, 3.00, 6.50, 4.50, 2.50, 1.50),
+(401, 'Program Studi Pedalangan', 85, 2.00, 4.00, 6.00, 5.00, 3.00, 1.00),
+(402, 'Program Studi Pendidikan Seni Pertunjukan', 85, 2.00, 3.00, 6.50, 5.50, 4.00, 2.50),
+(403, 'Program Studi Musik', 85, 2.00, 1.50, 6.50, 4.00, 2.50, 1.00),
+(404, 'Program Studi Teater', 85, 2.00, 4.00, 6.50, 5.50, 3.50, 2.50),
+(405, 'Program Studi Bisnis Digital', 85, 2.50, 4.00, 3.00, 5.50, 6.50, 4.50),
+(406, 'Program Studi Bahasa dan Kebudayaan Inggris', 85, 2.50, 5.00, 6.00, 5.50, 3.00, 2.00),
+(407, 'Program Studi Seni Murni', 86, 2.00, 4.00, 6.50, 3.50, 2.50, 1.50),
+(408, 'Program Studi Kriya', 86, 4.50, 2.00, 6.00, 3.50, 2.50, 1.50),
+(409, 'Program Studi Desain Interior', 86, 2.50, 4.00, 6.50, 5.00, 3.50, 2.00),
+(410, 'Program Studi Desain Komunikasi Visual (DKV)', 86, 2.50, 4.00, 6.50, 5.00, 3.50, 2.00),
+(411, 'Program Studi Fotografi', 86, 2.50, 4.00, 6.50, 3.00, 2.00, 1.50),
+(412, 'Program Studi Desain Mode', 86, 2.00, 3.00, 6.50, 4.00, 3.50, 2.50),
+(413, 'Program Studi Film dan TV', 86, 2.50, 4.00, 6.50, 5.00, 3.50, 2.00),
+(414, 'Program Studi Animasi', 86, 2.50, 4.00, 6.50, 3.50, 2.00, 1.50),
+(415, 'Program Studi Desain Produk', 86, 2.50, 4.00, 6.50, 3.50, 2.00, 1.50),
+(416, 'Program Studi Arsitektur', 86, 2.50, 4.00, 6.50, 3.50, 2.00, 1.50),
+(417, 'Sistem Komputer', 87, 6.50, 5.00, 2.00, 3.50, 4.00, 5.50),
+(418, 'Sistem Informasi', 87, 5.50, 6.20, 4.00, 4.50, 5.00, 5.50),
+(419, 'Teknologi Informasi', 87, 6.50, 5.50, 4.00, 4.50, 5.00, 5.50),
+(420, 'Bisnis Digital', 88, 2.50, 4.00, 3.00, 5.50, 6.50, 4.50),
+(421, 'Diploma 3', 88, 5.50, 4.20, 3.80, 5.00, 6.00, 4.50),
+(422, 'Informatika', 95, 5.50, 6.20, 4.80, 4.20, 5.00, 4.50),
+(423, 'Sistem Informasi', 95, 5.50, 6.20, 4.00, 4.50, 5.00, 5.50),
+(424, 'Sistem Informasi Akuntansi', 95, 4.50, 5.20, 2.80, 3.50, 4.80, 5.50),
+(425, 'Desain Komunikasi Visual', 95, 2.50, 4.00, 6.50, 5.00, 3.50, 2.00),
+(426, 'Akuntansi', 96, 2.50, 4.00, 1.50, 3.50, 5.00, 6.50),
+(427, 'Bisnis Digital', 96, 2.50, 4.00, 3.00, 5.50, 6.50, 4.50),
+(428, 'Manajemen', 96, 2.50, 3.00, 1.50, 4.00, 6.00, 5.50),
+(429, 'Usaha Perjalanan Wisata', 104, 2.50, 1.00, 4.00, 6.00, 5.50, 3.00),
+(430, 'Perhotelan', 104, 2.50, 1.50, 4.00, 6.00, 5.50, 3.00),
+(431, 'Manajemen Bisnis Pariwisata', 104, 2.50, 1.50, 3.00, 5.50, 6.00, 4.00),
+(432, 'Perencanaan Pariwisata', 104, 4.50, 3.00, 5.00, 6.00, 5.50, 2.50),
+(433, 'Perhotelan PSDKU Lombok Barat', 104, 2.50, 1.80, 4.20, 6.00, 5.50, 3.80),
+(434, 'Perhotelan PSDKU Karangasem', 104, 2.50, 1.80, 4.20, 6.00, 5.50, 3.80),
+(435, 'Perhotelan PSDKU Jembrana', 104, 2.50, 1.80, 4.20, 6.00, 5.50, 3.80),
+(436, 'Perhotelan PSDKU Gianyar', 104, 2.50, 1.50, 4.00, 6.00, 5.50, 3.00),
+(437, 'Doktor Terapan Bisnis Pariwisata', 104, 2.50, 4.00, 3.00, 5.50, 6.00, 4.50),
+(438, 'Teknik Listrik', 105, 6.50, 5.00, 2.00, 3.50, 4.50, 5.50),
+(439, 'Teknik Otomasi', 105, 6.50, 5.00, 2.00, 3.00, 4.00, 5.50),
+(440, 'Instalasi dan Pemeliharaan Kabel Bertegangan Rendah', 105, 6.50, 2.00, 1.00, 2.50, 3.50, 5.00),
+(441, 'Teknologi Rekayasa Energi Terbarukan', 105, 6.50, 5.80, 2.20, 3.50, 4.80, 5.00),
+(442, 'Administrasi Bisnis', 106, 2.50, 1.50, 1.00, 4.00, 6.00, 5.50),
+(443, 'Manajemen Bisnis Internasional', 106, 2.50, 3.00, 1.50, 5.00, 6.00, 4.00),
+(444, 'Bisnis Digital', 106, 2.50, 4.00, 3.00, 5.50, 6.50, 4.50),
+(445, 'Manajemen Operasi Bisnis Digital', 106, 2.50, 4.00, 1.50, 5.00, 6.00, 3.50),
+(446, 'Operasionalisasi Perkantoran Digital', 106, 4.50, 2.00, 1.50, 5.00, 6.00, 6.50),
+(447, 'Bahasa Inggris untuk Komunikasi Bisnis dan Profesional', 106, 2.50, 4.00, 5.50, 6.00, 5.00, 3.50),
+(448, 'Administrasi Bisnis PSDKU Karangasem', 106, 2.50, 1.50, 1.00, 5.00, 6.00, 4.50),
+(449, 'Magister Terapan Pemasaran, Inovasi dan Teknologi', 106, 2.50, 4.20, 3.80, 5.50, 6.00, 4.50),
+(450, 'Akuntansi', 107, 2.50, 4.00, 1.50, 3.50, 5.00, 6.50),
+(451, 'Akuntansi Manajerial', 107, 2.50, 4.20, 1.80, 3.50, 5.80, 6.20),
+(452, 'Akuntansi Perpajakan', 107, 2.50, 4.00, 1.50, 3.00, 5.50, 6.50),
+(453, 'Administrasi Perpajakan', 107, 2.50, 1.50, 1.00, 4.00, 5.50, 6.50),
+(454, 'Akuntansi Bisnis Digital', 107, 2.50, 4.00, 1.50, 3.00, 5.50, 6.00),
+(455, 'Teknik Mesin', 108, 6.50, 5.00, 2.00, 3.00, 4.00, 5.50),
+(456, 'Teknik Pendingin dan Tata Udara', 108, 6.50, 4.20, 2.10, 3.50, 5.00, 5.50),
+(457, 'Teknologi Rekayasa Utilitas', 108, 6.50, 4.20, 2.10, 3.50, 5.80, 5.20),
+(458, 'Rekayasa Perancangan Mekanik', 108, 6.50, 4.20, 2.50, 3.00, 4.50, 5.00),
+(459, 'Teknik Manufaktur Mesin', 108, 6.50, 5.00, 2.00, 3.00, 4.00, 5.50),
+(460, 'Teknik Sipil', 109, 6.50, 4.20, 2.10, 3.50, 4.80, 5.00),
+(461, 'Manajemen Proyek Konstruksi', 109, 6.50, 4.20, 2.50, 5.80, 6.80, 5.20),
+(462, 'Teknologi Rekayasa Konstruksi Bangunan Gedung', 109, 6.50, 4.20, 2.50, 3.80, 5.50, 5.00),
+(463, 'Teknologi Rekayasa Konstruksi Bangunan Air', 109, 6.50, 4.20, 2.10, 3.50, 5.00, 4.80),
+(464, 'Fondasi, Beton, dan Pengaspalan Jalan', 109, 6.50, 2.00, 1.00, 2.50, 4.00, 5.50),
+(465, 'Manajemen Informatika', 110, 4.50, 5.20, 3.80, 5.50, 6.00, 5.00),
+(466, 'Teknologi Rekayasa Perangkat Lunak', 110, 6.50, 5.00, 2.00, 3.50, 4.00, 5.50),
+(467, 'Administrasi Jaringan Komputer', 110, 6.50, 5.00, 2.00, 4.00, 5.50, 6.00),
+(468, 'Pengelolaan Perhotelan', 111, 2.50, 1.50, 1.00, 6.00, 5.50, 4.00),
+(469, 'Manajemen Akuntansi Hospitaliti', 111, 2.50, 1.80, 1.20, 5.50, 6.20, 4.80),
+(470, 'Divisi Kamar', 111, 2.50, 1.00, 1.50, 6.00, 3.00, 4.00),
+(471, 'Seni Kuliner', 111, 4.50, 2.00, 6.50, 5.00, 3.50, 2.50),
+(472, 'Tata Hidang', 111, 4.50, 2.00, 5.50, 6.00, 3.50, 2.50),
+(473, 'Destinasi Pariwisata', 112, 4.50, 2.00, 6.00, 6.50, 5.00, 3.00),
+(474, 'Usaha Perjalanan Pariwisata', 112, 2.50, 1.00, 4.00, 6.00, 5.50, 3.00),
+(475, 'Pengelolaan Konvensi dan Acara', 112, 2.50, 1.50, 4.00, 6.00, 5.50, 3.00),
+(476, 'D3 Akuntansi', 113, 2.50, 1.50, 1.00, 3.00, 4.50, 6.00),
+(477, 'Usaha Perjalan Wisata', 114, 4.50, 2.00, 5.00, 6.00, 5.50, 3.50),
+(478, 'Teknik Elektronika', 115, 6.50, 5.50, 2.00, 3.00, 4.00, 5.00);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `universitas`
+--
+
+CREATE TABLE `universitas` (
+  `id_univ` int(11) NOT NULL,
+  `nama_univ` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `universitas`
+--
+
+INSERT INTO `universitas` (`id_univ`, `nama_univ`) VALUES
+(2, 'Universitas Udayana'),
+(3, 'Universitas Pendidikan Ganesha'),
+(4, 'Universitas Terbuka'),
+(5, 'Universitas Warmadewa'),
+(6, 'Universitas Mahasaraswati Denpasar'),
+(7, 'Universitas Hindu Indonesia'),
+(8, 'Universitas Dhyana Pura'),
+(9, 'Universitas Ngurah Rai'),
+(10, 'Universitas Tabanan'),
+(11, 'Universitas Panji Sakti'),
+(12, 'Universitas Bali Dwipa'),
+(13, 'Universitas PGRI Mahadewa Indonesia'),
+(14, 'Institut Seni Indonesia Denpasar'),
+(15, 'Institut Teknologi dan Bisnis STIKOM Bali'),
+(16, 'Sekolah Tinggi Pariwisata Bali Internasional'),
+(17, 'STMIK Primakara'),
+(18, 'STIKI Indonesia'),
+(19, 'Politeknik Negeri Bali'),
+(20, 'Politeknik Pariwisata Bali'),
+(21, 'Politeknik Nasional Denpasar');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `fakultas`
+--
+ALTER TABLE `fakultas`
+  ADD PRIMARY KEY (`id_fakultas`),
+  ADD KEY `id_univ` (`id_univ`);
+
+--
+-- Indexes for table `prodi`
+--
+ALTER TABLE `prodi`
+  ADD PRIMARY KEY (`id_prodi`),
+  ADD KEY `id_fakultas` (`id_fakultas`);
+
+--
+-- Indexes for table `universitas`
+--
+ALTER TABLE `universitas`
+  ADD PRIMARY KEY (`id_univ`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `fakultas`
+--
+ALTER TABLE `fakultas`
+  MODIFY `id_fakultas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+
+--
+-- AUTO_INCREMENT for table `prodi`
+--
+ALTER TABLE `prodi`
+  MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=479;
+
+--
+-- AUTO_INCREMENT for table `universitas`
+--
+ALTER TABLE `universitas`
+  MODIFY `id_univ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `fakultas`
+--
+ALTER TABLE `fakultas`
+  ADD CONSTRAINT `fakultas_ibfk_1` FOREIGN KEY (`id_univ`) REFERENCES `universitas` (`id_univ`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `prodi`
+--
+ALTER TABLE `prodi`
+  ADD CONSTRAINT `prodi_ibfk_1` FOREIGN KEY (`id_fakultas`) REFERENCES `fakultas` (`id_fakultas`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
