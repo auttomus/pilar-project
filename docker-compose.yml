@@ -16,7 +16,7 @@ services:
       # Seed data: MySQL otomatis menjalankan file .sql di folder ini saat inisialisasi pertama
       - ./database/schemas:/docker-entrypoint-initdb.d
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -53,6 +53,20 @@ services:
       - /app/node_modules
     stdin_open: true
     tty: true
+    # --------------------------------------------------------
+    # 4. (Ngrok Tunnel)
+    # --------------------------------------------------------
+  ngrok:
+    image: ngrok/ngrok:latest
+    restart: unless-stopped
+    profiles: ["tunnel"]
+    command:
+      - "http"
+      - "frontend:5173" # Mengarah ke service frontend secara internal
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    depends_on:
+      - frontend
 
 volumes:
   aset_data_mysql:

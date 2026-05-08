@@ -61,6 +61,17 @@ Proyek ini dirancang agar dapat berjalan dengan satu perintah operasional melalu
    * **Layanan API (Backend)**: [http://localhost:8000](http://localhost:8000)
    * **Dokumentasi API Terbuka (Swagger UI)**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
+### 5. Akses Publik via Ngrok (Opsional)
+
+Jika Anda ingin mengakses aplikasi ini melalui internet (misal: untuk demo jarak jauh), Anda dapat mengaktifkan *tunnel* Ngrok:
+
+1. Pastikan Anda sudah mengisi `NGROK_AUTHTOKEN` di file `.env`.
+2. Jalankan docker-compose dengan profil `tunnel`:
+   ```bash
+   docker compose --profile tunnel up -d
+   ```
+3. Cek URL publik Anda melalui dashboard Ngrok atau log container.
+
 ## Operasi Lanjutan
 
 Untuk menghapus seluruh data yang ada di *database* dan mengembalikan sistem ke kondisi awal (sesuai *seed* data), jalankan:

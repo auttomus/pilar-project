@@ -89,6 +89,11 @@ def get_statistics(session: Session = Depends(get_session)):
         if score:
             # Cari nilai tertinggi
             max_val = max(score.values())
+            
+            # Abaikan anomali: Jika pengguna mengosongkan semua (nilai max adalah 0)
+            if max_val == 0.0:
+                continue
+                
             # Hitung SEMUA tipe yang memiliki nilai tertinggi (menangani seri)
             for key, val in score.items():
                 if val == max_val:

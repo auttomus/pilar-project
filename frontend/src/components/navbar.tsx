@@ -31,6 +31,9 @@ const Navbar: React.FC = () => {
           <Link to="/statistics" className="hover:text-slate-900 transition-colors flex items-center gap-2">
             Statistik
           </Link>
+          <Link to="/document" className="hover:text-slate-900 transition-colors flex items-center gap-2">
+            Paper Publikasi
+          </Link>
           <Button
             size="sm"
             variant="primary"
@@ -66,6 +69,13 @@ const Navbar: React.FC = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             Statistik
+          </Link>
+          <Link
+            to="/document"
+            className="hover:text-slate-900 transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Paper Publikasi
           </Link>
           <Button
             size="md"

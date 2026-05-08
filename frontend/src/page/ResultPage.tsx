@@ -67,13 +67,13 @@ const ResultPage: React.FC = () => {
         <Navbar />
         <div className="flex-grow flex flex-col items-center justify-center p-6 text-center">
           <h2 className="text-3xl font-serif font-black mb-4 text-slate-900 uppercase">
-            Anomali Data
+            Data Tidak Ditemukan
           </h2>
           <p className="text-slate-600 font-medium mb-8">
-            Sesi asesmen tidak ditemukan atau telah kedaluwarsa.
+            Sesi tes kamu tidak ditemukan atau sudah berakhir. Silakan isi kuesioner kembali.
           </p>
           <Button variant="primary" onClick={handleBackToHome}>
-            Kembali ke Indeks
+            Kembali ke Beranda
           </Button>
         </div>
         <Footer />
@@ -88,10 +88,10 @@ const ResultPage: React.FC = () => {
       <main className="flex-grow max-w-7xl mx-auto px-6 py-16 w-full">
         <header className="mb-16 border-b-4 border-slate-900 pb-8">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-4">
-            Laporan Analisis Kognitif
+            Hasil Analisis Minat & Bakat
           </span>
           <h1 className="text-5xl md:text-7xl font-serif font-black text-slate-900 uppercase tracking-tighter leading-none">
-            Resolusi Asesmen.
+            Rekomendasi Karirmu.
           </h1>
         </header>
 
@@ -100,10 +100,10 @@ const ResultPage: React.FC = () => {
           <div className="lg:col-span-5 lg:sticky lg:top-28">
             <div className="mb-8">
               <h2 className="text-2xl font-serif font-bold text-slate-900 uppercase">
-                Matriks RIASEC
+                Profil Kepribadian RIASEC
               </h2>
               <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1">
-                Representasi Geometris
+                Grafik Minat & Bakatmu
               </p>
             </div>
             <Stats scores={u_scores} />
@@ -113,10 +113,10 @@ const ResultPage: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             <div className="mb-8">
               <h2 className="text-2xl font-serif font-bold text-slate-900 uppercase">
-                Korelasi Institusional
+                Rekomendasi Program Studi
               </h2>
               <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1">
-                Algoritma Cosine Similarity
+                Berdasarkan Tingkat Kecocokan Tertinggi
               </p>
             </div>
 
@@ -135,12 +135,11 @@ const ResultPage: React.FC = () => {
             {/* Area Tindakan & Evaluasi */}
             <div className="mt-20 border-t-4 border-slate-900 pt-12 bg-white p-10">
               <h3 className="text-3xl font-serif font-black text-slate-900 mb-4 uppercase">
-                Validasi Output
+                Berikan Feedbackmu
               </h3>
               <p className="text-slate-600 mb-10 font-medium">
-                Keputusan historis ini menjadi variabel penentu untuk optimasi
-                mesin rekomendasi PILAR selanjutnya. Apakah hasil kalkulasi ini
-                selaras dengan proyeksi Anda?
+                Pendapatmu sangat berarti untuk membantu kami mengembangkan sistem PILAR.
+                Apakah hasil rekomendasi ini membuatmu tertarik melanjutkan pendidikan?
               </p>
 
               {!decisionMade ? (
@@ -173,7 +172,7 @@ const ResultPage: React.FC = () => {
                   onClick={handleBackToHome}
                   className="text-slate-400 hover:text-slate-900 font-bold text-xs uppercase tracking-widest transition-colors"
                 >
-                  [ Inisiasi Ulang Instrumen ]
+                  [ Ulangi Tes ]
                 </button>
               </div>
             </div>

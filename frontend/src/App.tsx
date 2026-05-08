@@ -3,6 +3,7 @@ import LandingPage from "./page/LandingPage";
 import QuestiongPage from "./page/QuestiongPage";
 import ResultPage from "./page/ResultPage";
 import StatisticPage from "./page/StatisticPage";
+import DocumentPage from "./page/DocumentPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/questions" element={<QuestiongPage />} />
         <Route path="/result" element={<ResultPage />} />
         <Route path="/statistics" element={<StatisticPage />} />
+        <Route path="/document" element={<DocumentPage />} />
       </Routes>
     </Router>
   );

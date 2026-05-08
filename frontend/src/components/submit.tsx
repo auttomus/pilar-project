@@ -20,13 +20,12 @@ const Submit: React.FC<SubmitProps> = ({ onSubmit, isLoading }) => {
     <div className="w-full max-w-xl mx-auto bg-white border-2 border-slate-900 p-8 md:p-12">
       <div className="mb-10">
         <h2 className="text-3xl font-serif font-black text-slate-900 mb-4 uppercase tracking-tighter">
-          Finalisasi Data
+          Lihat Hasilmu
         </h2>
         <div className="w-12 h-1 bg-slate-900 mb-4" />
         <p className="text-sm font-medium text-slate-600 leading-relaxed font-serif italic">
-          Seluruh instrumen kognitif telah terjawab. Masukkan kredensial
-          institusional Anda untuk melakukan proses enkripsi dan menghasilkan
-          postulat kecocokan vokasional.
+          Kamu telah menyelesaikan semua pertanyaan. Masukkan emailmu untuk
+          melihat rekomendasi program studi yang paling cocok untukmu.
         </p>
       </div>
 
@@ -36,7 +35,7 @@ const Submit: React.FC<SubmitProps> = ({ onSubmit, isLoading }) => {
             htmlFor="email"
             className="block text-[10px] font-bold text-slate-900 uppercase tracking-widest mb-2"
           >
-            Alamat Surel Elektronik (Email)
+            Alamat Email
           </label>
           <input
             id="email"
@@ -50,8 +49,8 @@ const Submit: React.FC<SubmitProps> = ({ onSubmit, isLoading }) => {
         </div>
 
         <div className="p-4 bg-slate-100 border-l-4 border-slate-900 text-xs font-medium text-slate-600">
-          Dengan menekan tombol di bawah, Anda memvalidasi bahwa data yang
-          diberikan adalah representasi mutlak dari preferensi Anda saat ini.
+          Dengan menekan tombol di bawah, kamu memastikan bahwa jawaban yang
+          diberikan sesuai dengan kondisimu saat ini.
         </div>
 
         <Button
@@ -61,7 +60,7 @@ const Submit: React.FC<SubmitProps> = ({ onSubmit, isLoading }) => {
           fullWidth
           isLoading={isLoading}
         >
-          Kalkulasi Hasil Asesmen
+          Lihat Hasil Rekomendasi
         </Button>
       </form>
     </div>

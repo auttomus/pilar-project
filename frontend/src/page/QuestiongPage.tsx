@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Sparkles, ArrowLeft, ArrowRight } from "lucide-react";
+import { ChartColumnDecreasing, ArrowLeft, ArrowRight } from "lucide-react";
 import Question from "../components/question";
 import Button from "../components/button";
 import Skeleton from "../components/skeleton";
@@ -32,7 +32,7 @@ const QuestiongPage: React.FC = () => {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col pt-24 px-6 items-center">
         <h1 className="text-3xl font-serif font-black mb-8 text-slate-900 uppercase tracking-widest">
-          Inisialisasi Instrumen...
+          Menyiapkan Pertanyaan...
         </h1>
         <div className="w-full max-w-4xl">
           <Skeleton />
@@ -50,7 +50,7 @@ const QuestiongPage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-6 h-16 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-slate-900 flex items-center justify-center text-white">
-              <Sparkles size={14} />
+              <ChartColumnDecreasing size={14} />
             </div>
             <span className="text-xl font-serif font-black text-slate-900 uppercase">
               PILAR
@@ -59,7 +59,7 @@ const QuestiongPage: React.FC = () => {
           {!isSubmitPage && (
             <div className="text-right flex flex-col">
               <span className="text-[10px] font-bold text-slate-900 uppercase tracking-widest">
-                Segmen {currentPage + 1} dari {questionPages}
+                Halaman {currentPage + 1} dari {questionPages}
               </span>
             </div>
           )}
@@ -80,7 +80,7 @@ const QuestiongPage: React.FC = () => {
             <div className="mb-12 flex justify-between items-end border-b-4 border-slate-900 pb-6">
               <div>
                 <h1 className="text-4xl font-serif font-black text-slate-900 uppercase leading-none">
-                  Akuisisi <br /> Parameter
+                  Jawab <br /> Pertanyaan
                 </h1>
               </div>
               <div className="text-right pb-1">
@@ -126,7 +126,7 @@ const QuestiongPage: React.FC = () => {
                 className="text-slate-400 hover:text-slate-900 font-bold text-xs transition-colors uppercase tracking-widest flex items-center justify-center mx-auto"
               >
                 <ArrowLeft size={14} className="mr-2" />
-                Revisi Jawaban Terakhir
+                Kembali ke Soal Sebelumnya
               </button>
             </div>
           </div>

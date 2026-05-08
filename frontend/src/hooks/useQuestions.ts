@@ -14,7 +14,7 @@ export const useQuestions = (itemsPerPage: number = 3) => {
     if (questions.length > 0) {
       const initialAnswers: Record<string, number> = {};
       questions.forEach((q: QuestionData) => {
-        initialAnswers[q.id.toString()] = 50;
+        initialAnswers[q.id.toString()] = 0;
       });
       setAnswers(initialAnswers);
     }
