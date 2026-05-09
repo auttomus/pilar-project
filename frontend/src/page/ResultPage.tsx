@@ -87,11 +87,8 @@ const ResultPage: React.FC = () => {
 
       <main className="flex-grow max-w-7xl mx-auto px-6 py-16 w-full">
         <header className="mb-16 border-b-4 border-slate-900 pb-8">
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-4">
-            Hasil Analisis Minat & Bakat
-          </span>
           <h1 className="text-5xl md:text-7xl font-serif font-black text-slate-900 uppercase tracking-tighter leading-none">
-            Rekomendasi Karirmu.
+            Hasil Analisis Minat & Bakat
           </h1>
         </header>
 
